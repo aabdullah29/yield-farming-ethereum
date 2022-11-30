@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import Web3 from 'web3';
 import './App.css';
 import Navabr from './Navbar';
 // import Main from './Main';
-import Web3 from 'web3';
-// import Tether from '../truffle_abis/Tether.json';
-// import Reward from '../truffle_abis/Reward.json';
-// import DecentralBank from '../truffle_abis/DecentralBank.json';
+import Tether from '../truffle_abis/Tether.json';
+import Reward from '../truffle_abis/RWD.json';
+import DecentralBank from '../truffle_abis/DecentralBank.json';
 // import ParticleSettings from './ParticleSettings';
 
 
@@ -30,9 +30,27 @@ class App extends Component {
     // load in blockchain data 
     async loadBlockchainData() {
         const web3 = await window.web3;
-        const account = await web3.eth.getAccounts(); // get the account from our blockchain data 
+
+        // get the account from metamask
+        const account = await web3.eth.getAccounts();  
         this.setState({ account: account[0] });
         console.log("connected account is:", account[0]);
+
+        // set up network ID that we can connect to Tether contract
+        const networkID = await web3.eth.net.getId();
+        console.log("connected networkID is:", networkID);
+
+        // load Tether Contract
+        const tetherData = Tether.networks[networkID];
+        if (tetherData) {
+            const tether = new web3.eth.Contract(Tether.abi, tetherData.address)  // create Tether object using ABI + Address 
+            this.setState({ tether: tether });
+            let tetherBalance = await tether.methods.balanceOf(this.state.account).call(); // load Tether balance
+            this.setState({ tetherBalance: tetherBalance.toString() });  // set to the state of tether.balance{}
+            console.log('tether balance is:', tetherBalance.toString());
+        } else { // if we dont load tether data
+            alert('Error! Tether contract data not available. Consider changing to the Ganache network.')
+        }
     }
 
 
@@ -43,7 +61,7 @@ class App extends Component {
         await this.loadBlockchainData(); // load blockchain data 
     }
 
-    // constructor
+    // constructor => set default state
     constructor(props) {
         super(props)
         this.state = {

@@ -39,6 +39,7 @@ test directory has the test script for testing the smart contract
 - load basics blockchain data using web3 on react
 - metamask integration using web3 on react
 - load blockchain data using web3 on react
+- load tether smart contract on react app
 
 
 
