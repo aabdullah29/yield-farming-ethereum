@@ -30,29 +30,15 @@ test directory has the test script for testing the smart contract
 
 
 
+## 22-12-01
 
-## 22-11-30
-
-- build the test enviorment for testing the smart contract
-- assertions & mochaChai tests
-- test the tether contract name
-- test the RWD contract name
-- write before script for testing
-- transfer token function test
-- write thw business logic for DecentralBank
-- staking function for DecentralBank
-- test (staking) depositToken function
-- test customer balance after staking
-- test bank balance after staking
-- test customer stake token balance
-- test isStaking falag after staking
-- test only owner can issue
-- test issue token by owner
-- test unstake token function
-- test customer tether token balance after unstaking
-- test customen balance in bank after unstaking
-- test isStaking falag after unstaking
-- write script for reward
+- introduction to react
+- build example app in react
+- basics of react 
+- create navbar in react
+- load basics blockchain data using web3 on react
+- metamask integration using web3 on react
+- load blockchain data using web3 on react
 
 
 
