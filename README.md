@@ -54,7 +54,7 @@ test directory has the test script for testing the smart contract
 
 
 # 22-12-02
-
+- write ParticleSettings script for render the page
 
 
 
