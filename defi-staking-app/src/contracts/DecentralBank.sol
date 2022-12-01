@@ -24,7 +24,7 @@ contract DecentralBank {
     }
 
     //staking function
-    function depositToken(uint _amount) public{
+    function depositTokens(uint _amount) public{
         require(_amount > 0 , "Amount cannot be zero.");
         //transfer tether token to this contract for staking
         tether.transferFrom(msg.sender, address(this), _amount);
@@ -52,7 +52,7 @@ contract DecentralBank {
     }
 
     // unstake the Tokens
-    function unstakingTokens() public{
+    function unstakeTokens() public{
         uint balance = stakingBalance[msg.sender];
         require(balance > 0, "Staking balance cannot be less zero");
         tether.transfer(msg.sender, balance);

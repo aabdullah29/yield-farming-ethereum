@@ -73,7 +73,7 @@ contract ('DecentralBank' , ([owner, customer]) =>{
 
             // staking customer 100 token and check
             await tether.approval(decentralBank.address, Tokens('100'),{from: customer});
-            await decentralBank.depositToken( Tokens('100'),{from: customer});
+            await decentralBank.depositTokens( Tokens('100'),{from: customer});
 
             // check customer balance after staking
             result= await tether.balanceOf(customer);
@@ -98,7 +98,7 @@ contract ('DecentralBank' , ([owner, customer]) =>{
             await decentralBank.issueTokens({from:owner})
 
             //unstake token
-            await decentralBank.unstakingTokens({from:customer})
+            await decentralBank.unstakeTokens({from:customer})
 
             // check customer tether token balance after unstaking
             result = await tether.balanceOf(customer)

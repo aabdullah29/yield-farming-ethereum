@@ -30,7 +30,7 @@ contract RWD {
     }
 
     // approve the other account to transfer some tokens
-    function approved(address _spender, uint256 _token) public returns (bool success) {
+    function approval(address _spender, uint256 _token) public returns (bool success) {
         require(_token <= balanceOf[msg.sender], "Not enough balance to approve.");
         _allowances[msg.sender][_spender] = _token;
         emit Approval(msg.sender, _spender, _token);

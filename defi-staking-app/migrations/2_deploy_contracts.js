@@ -22,6 +22,6 @@ module.exports = async (deployer, network, accounts) => {
     await rwd.transfer(decentralBank.address, '1000000000000000000000000'); // 1 milion with 18 decimal points
 
     // distribute 100 Tether token to investor
-    await tether.transfer(accounts[1], '1000000000000000000');
+    await tether.transfer(accounts[1], '100000000000000000000');
 
 };

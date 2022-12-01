@@ -40,6 +40,21 @@ test directory has the test script for testing the smart contract
 - metamask integration using web3 on react
 - load blockchain data using web3 on react
 - load tether smart contract on react app
+- load reward smart contract on react app
+- load decentralBank smart contract on react app
+- create the main component for intract with the blockchain contract
+- create a table for showing the blockchain data of that account
+- create a form to update the that specific account
+- write content script for check that blockchain data is loaded or not
+- load blockchain data in the state objects
+- write function for staking and setApprovel
+- write function for unstaking
+- call the function from front end using react
+
+
+
+# 22-12-02
+
 
 
 
