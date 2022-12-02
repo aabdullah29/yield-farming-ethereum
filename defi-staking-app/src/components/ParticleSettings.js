@@ -13,7 +13,7 @@ class ParticleSettings extends Component {
                     {
                         background: {
                             color: {
-                                value: '#0d47a1',
+                                value: 'yellow',
                             },
                         },
                         fpslimit: 60,
@@ -49,10 +49,10 @@ class ParticleSettings extends Component {
 
                         particles: {
                             color: {
-                                value: '#fff',
+                                value: '#ff0000',
                             },
                             links: {
-                                color: "#fff",
+                                color: "#ff0000",
                                 distance: 150,
                                 enable: true,
                                 opacity: 0.5,
